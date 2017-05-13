@@ -1,4 +1,4 @@
-DropboxIgnore
+Dropbox Ignore
 ==============
 Python scripts for managing Dropbox selective sync.
 
