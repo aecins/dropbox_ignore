@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Copyright (c) 2017, Aleksandrs Ecins
 # All rights reserved.
 
@@ -28,7 +30,6 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#!/usr/bin/python
 import subprocess
 import os
 import shutil
