@@ -135,6 +135,13 @@ def main(argv):
       print "  " + pattern
 
   #-----------------------------------------------------------------------------
+  # Get directory of ./dropbox_ignore. Already excluded directories are listed
+  # relative to this directory.
+  #-----------------------------------------------------------------------------
+
+  dropboxIgnoreDir = os.path.dirname(argv[0])
+
+  #-----------------------------------------------------------------------------
   # Get all folders that are already excluded
   #-----------------------------------------------------------------------------
   alreadyExcluded = []
@@ -173,7 +180,8 @@ def main(argv):
     if root[k+1:] in ignoreList:
       if root[0:2] == "./":
         root = root[2:]
-      shouldBeExcluded.append(os.path.relpath(root))
+      root = os.path.relpath(root, dropboxIgnoreDir)
+      shouldBeExcluded.append(root)
 
   print
   print "----------------------------------------------------------------------"
@@ -190,7 +198,7 @@ def main(argv):
   #-----------------------------------------------------------------------------  
   # Get a list of folders that need to be added to excludes
   #-----------------------------------------------------------------------------
-  addToExclude = [item for item in shouldBeExcluded if item not in alreadyExcluded]
+  addToExclude = [item for item in shouldBeExcluded if item.lower() not in alreadyExcluded]
 
   print
   print "----------------------------------------------------------------------"
