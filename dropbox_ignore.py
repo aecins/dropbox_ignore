@@ -145,11 +145,11 @@ def main(argv):
   stdout = iter(p.stdout.readline, b'')
 
   for line in stdout:
+    if line == "Excluded: \n":
+      continue
     item = line[:-1]
     item = os.path.relpath(item)
     alreadyExcluded.append(item)
-
-  alreadyExcluded = alreadyExcluded[1:]
 
   print
   print "----------------------------------------------------------------------"
