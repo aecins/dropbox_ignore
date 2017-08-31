@@ -207,6 +207,13 @@ def main(argv):
   # Set folders to ignore
   #-----------------------------------------------------------------------------
 
+  # If no folders to add
+  if len(addToExclude) == 0:
+    print
+    print "----------------------------------------------------------------------"
+    print "NO folders need to be added to the exclude list."
+    return
+
   # If not execute
   if not execute:
     print
